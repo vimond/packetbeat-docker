@@ -4,7 +4,7 @@ MAINTAINER Tudor Golubenco <tudor@packetbeat.com>
 RUN apt-get update
 RUN apt-get -y -q install libpcap0.8 wget
 
-ENV VERSION=1.0.0-beta2 ARCH=x86_64 EXTENSION=tar.gz
+ENV VERSION=1.0.0-beta3 ARCH=x86_64 EXTENSION=tar.gz
 ENV FILENAME=packetbeat-${VERSION}-${ARCH}.${EXTENSION}
 
 RUN wget https://download.elastic.co/beats/packetbeat/${FILENAME}
