@@ -16,4 +16,4 @@ ADD packetbeat.yml /conf/packetbeat.yml
 WORKDIR packetbeat-${VERSION}-${ARCH}
 VOLUME /conf
 
-CMD ["./packetbeat", "-e", "-c=/conf/packetbeat.yml", "-d", "publish"]
+CMD ["./packetbeat", "-e", "-c=/conf/packetbeat.yml"]
