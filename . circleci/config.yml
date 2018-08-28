@@ -15,7 +15,7 @@ dependencies:
     
 test:
   override:
-    - "true"
+    - echo "done"
 
 deployment:
   artifactory:
