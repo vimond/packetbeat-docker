@@ -2,6 +2,8 @@ version: 2
 jobs:
   build:
     machine: true
+    environment:
+      IMAGE_NAME: packetbeat-docker
     steps:
       - checkout
       #- setup_remote_docker
@@ -14,3 +16,7 @@ jobs:
       - run:
           name: Docker tag
           command: docker tag -f $IMAGE_NAME:$CIRCLE_BUILD_NUM $IMAGE_NAME:latest
+
+DOCKER_PRIVATE_REPO vimond-dockerv2-local.jfrog.io
+ARTIFACTORY_USER
+ARTIFACTORY_PASSWORD
