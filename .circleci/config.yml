@@ -13,3 +13,6 @@ jobs:
       - run:
           name: Docker build
           command: docker build --compress --tag $DOCKER_PRIVATE_REPO/$IMAGE_NAME:$CIRCLE_BUILD_NUM .
+      - run:
+          name: Docker push
+          command: docker push $DOCKER_PRIVATE_REPO/$IMAGE_NAME:$CIRCLE_BUILD_NUM
