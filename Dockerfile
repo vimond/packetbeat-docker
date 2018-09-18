@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y -q install libpcap0.8 wget \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 #ENV VERSION=5.5.2
-ENV VERSION
+ARG VERSION
 ENV ARCH=x86_64 EXTENSION=tar.gz
 ENV FILENAME=packetbeat-${VERSION}-linux-${ARCH}.${EXTENSION}
 
