@@ -10,7 +10,7 @@ jobs:
       #- setup_remote_docker
       - run:
           name: Setup version variable
-          command: 'export VERSION="$VERSION"' >> $BASH_ENV
+          command: echo 'export VERSION="$VERSION"' >> $BASH_ENV
       - run:
           name: Docker login
           command: docker login -u $ARTIFACTORY_USER -p $ARTIFACTORY_PASSWORD $DOCKER_PRIVATE_REPO
