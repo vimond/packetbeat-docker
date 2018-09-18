@@ -4,6 +4,7 @@ jobs:
     machine: true
     environment:
       IMAGE_NAME: packetbeat-docker
+      VERSION: 5.5.2
     steps:
       - checkout
       #- setup_remote_docker
@@ -15,4 +16,5 @@ jobs:
           command: docker build --compress --tag $DOCKER_PRIVATE_REPO/$IMAGE_NAME:$CIRCLE_BUILD_NUM .
       - run:
           name: Docker push
-          command: docker push $DOCKER_PRIVATE_REPO/$IMAGE_NAME:$CIRCLE_BUILD_NUM
+          #$CIRCLE_BUILD_NUM
+          command: docker push $DOCKER_PRIVATE_REPO/$IMAGE_NAME:$VERSION

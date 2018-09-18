@@ -5,7 +5,8 @@ MAINTAINER Tudor Golubenco <tudor@packetbeat.com>
 RUN apt-get update && apt-get -y -q install libpcap0.8 wget \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-ENV VERSION=5.5.2 ARCH=x86_64 EXTENSION=tar.gz
+#ENV VERSION=5.5.2 
+ENV ARCH=x86_64 EXTENSION=tar.gz
 ENV FILENAME=packetbeat-${VERSION}-linux-${ARCH}.${EXTENSION}
 
 #https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-5.5.2-linux-x86_64.tar.gz
