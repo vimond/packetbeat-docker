@@ -9,11 +9,14 @@ jobs:
       - checkout
       #- setup_remote_docker
       - run:
+          name: Setup version variable
+          command: 'export VERSION="$VERSION"' >> $BASH_ENV
+      - run:
           name: Docker login
           command: docker login -u $ARTIFACTORY_USER -p $ARTIFACTORY_PASSWORD $DOCKER_PRIVATE_REPO
       - run:
           name: Docker build
-          command: 'export VERSION="$VERSION"' >> $BASH_ENV || docker build --compress --tag $DOCKER_PRIVATE_REPO/$IMAGE_NAME:$CIRCLE_BUILD_NUM .
+          command: docker build --compress --tag $DOCKER_PRIVATE_REPO/$IMAGE_NAME:$CIRCLE_BUILD_NUM .
       - run:
           name: Docker push
           #$CIRCLE_BUILD_NUM
